@@ -28,6 +28,9 @@ const dashboard = async (req, res) => {
     throw new CustomAPIError("No token provided", 401);
   }
 
+  const token = authHeader.split(' ')[1]
+  console.log(token)
+
   const luckyNumber = Math.floor(Math.random() * 100);
   res.status(200).json({
     msg: `Hello, John Doe`,
